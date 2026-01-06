@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Faculty Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden">
+<div class="relative flex flex-col min-h-screen pb-[80px]">
+<!-- Top Navigation -->
+<div class="sticky top-0 z-50 flex items-center justify-between bg-white dark:bg-[#1A2633] p-4 border-b border-gray-200 dark:border-gray-800">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-[#111418] dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Profile</h2>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-[#111418] dark:text-white" style="font-size: 24px;">settings</span>
+</button>
+</div>
+<!-- Profile Header -->
+<div class="flex flex-col items-center gap-4 bg-white dark:bg-[#1A2633] p-6 mb-2 shadow-sm">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 border-4 border-background-light dark:border-background-dark shadow-lg" data-alt="Portrait of Dr. Sarah Jenkins, a professional woman with glasses" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbWQUUgtBs1QjAqNaZLKO7aIEArL1Pp885KerZ0faH0RFsf85XWtSQTtba33L36Y5NOabMGrataV_nFIlMqmqcUAXHqdaMJqHsgjTnhoWMAYs2xbWtTXSTgqX3clCnk3ybdeCduV_KXzpsGUzU8ErBcP3JnlOQDODivBwxSdwbv38EyCjhkm39M-tG6Btcj7g5zM-uc8GqssswuglC1y28lrpmduZ3Evap5fo1HPRpDc_tVM2v4mdJAHPujGp4OGZzmTeWI7FB4A");'>
+</div>
+<div class="absolute bottom-1 right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-white dark:border-[#1A2633]"></div>
+</div>
+<div class="flex flex-col items-center justify-center text-center">
+<h1 class="text-[#111418] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]">Dr. Sarah Jenkins</h1>
+<p class="text-[#617589] dark:text-gray-400 text-base font-normal mt-1">Associate Professor</p>
+</div>
+<button class="flex w-full max-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em] mt-2 shadow-md hover:shadow-lg">
+<span class="material-symbols-outlined mr-2" style="font-size: 18px;">edit</span>
+<span class="truncate">Edit Profile</span>
+</button>
+</div>
+<!-- Academic Information Section -->
+<div class="flex flex-col bg-white dark:bg-[#1A2633] mb-2 shadow-sm">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pt-5 pb-2">Academic Information</h3>
+<div class="px-4">
+<div class="grid grid-cols-[1fr_auto] gap-4 py-4 border-b border-[#f0f2f4] dark:border-gray-800 last:border-0">
+<div class="flex flex-col justify-center">
+<p class="text-[#617589] dark:text-gray-400 text-xs font-medium uppercase tracking-wider mb-1">Employee ID</p>
+<p class="text-[#111418] dark:text-white text-base font-medium">FAC-2023-89</p>
+</div>
+</div>
+<div class="grid grid-cols-[1fr_auto] gap-4 py-4 border-b border-[#f0f2f4] dark:border-gray-800 last:border-0">
+<div class="flex flex-col justify-center">
+<p class="text-[#617589] dark:text-gray-400 text-xs font-medium uppercase tracking-wider mb-1">Department</p>
+<p class="text-[#111418] dark:text-white text-base font-medium">Computer Science</p>
+</div>
+</div>
+<div class="grid grid-cols-[1fr_auto] gap-4 py-4 border-b border-[#f0f2f4] dark:border-gray-800 last:border-0">
+<div class="flex flex-col justify-center">
+<p class="text-[#617589] dark:text-gray-400 text-xs font-medium uppercase tracking-wider mb-1">Specialization</p>
+<p class="text-[#111418] dark:text-white text-base font-medium">Data Structures</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Details Section -->
+<div class="flex flex-col bg-white dark:bg-[#1A2633] mb-4 shadow-sm">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pt-5 pb-2">Contact Details</h3>
+<div class="px-4">
+<!-- Email -->
+<div class="flex items-center gap-4 py-4 border-b border-[#f0f2f4] dark:border-gray-800">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">mail</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-[#617589] dark:text-gray-400 text-xs font-medium uppercase tracking-wider mb-0.5">Email</p>
+<p class="text-[#111418] dark:text-white text-base font-medium break-all">s.jenkins@university.edu</p>
+</div>
+<button class="text-primary hover:text-blue-700">
+<span class="material-symbols-outlined" style="font-size: 20px;">content_copy</span>
+</button>
+</div>
+<!-- Phone -->
+<div class="flex items-center gap-4 py-4 border-b border-[#f0f2f4] dark:border-gray-800">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-[#617589] dark:text-gray-400 text-xs font-medium uppercase tracking-wider mb-0.5">Phone</p>
+<p class="text-[#111418] dark:text-white text-base font-medium">+1 (555) 012-3456</p>
+</div>
+<button class="text-primary hover:text-blue-700">
+<span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
+</button>
+</div>
+<!-- Location -->
+<div class="flex items-center gap-4 py-4 border-b border-[#f0f2f4] dark:border-gray-800 last:border-0">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">location_on</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-[#617589] dark:text-gray-400 text-xs font-medium uppercase tracking-wider mb-0.5">Office Location</p>
+<p class="text-[#111418] dark:text-white text-base font-medium">Building C, Room 304</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Logout Button -->
+<div class="px-4 py-6">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 text-base font-bold leading-normal tracking-[0.015em] transition-colors border border-red-100 dark:border-red-900/30">
+<span class="material-symbols-outlined mr-2">logout</span>
+<span class="truncate">Log Out</span>
+</button>
+</div>
+</div>
+<!-- Bottom Navigation -->
+</section>
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#101922] border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 max-w-md mx-auto">
+<div class="flex justify-around items-end h-16 pb-2">
+<!-- Dashboard -->
+<a href="./dasboard.html"
+   class="flex flex-col items-center gap-0.5 w-12 text-primary group">
+  <span class="material-symbols-outlined text-lg group-hover:scale-105 transition-transform">
+    dashboard
+  </span>
+  <span class="text-[9px] font-medium leading-none">Dashboard</span>
+</a>
+
+<!-- Schedule -->
+<a href="./schedule.html"
+   class="flex flex-col items-center gap-0.5 w-12 text-gray-400 
+          hover:text-gray-600 dark:hover:text-gray-200 transition-colors group">
+  <span class="material-symbols-outlined text-lg group-hover:scale-105 transition-transform">
+    calendar_month
+  </span>
+  <span class="text-[9px] font-medium leading-none">Schedule</span>
+</a>
+
+<!-- Library -->
+<a href="./library.html"
+   class="flex flex-col items-center gap-0.5 w-12 text-gray-400 
+          hover:text-gray-600 dark:hover:text-gray-200 transition-colors group">
+  <span class="material-symbols-outlined text-lg group-hover:scale-105 transition-transform">
+    local_library
+  </span>
+  <span class="text-[9px] font-medium leading-none">Library</span>
+</a>
+
+<!-- Profile -->
+<a href="./profile.html"
+   class="flex flex-col items-center gap-0.5 w-12 text-gray-400 
+          hover:text-gray-600 dark:hover:text-gray-200 transition-colors group">
+  <span class="material-symbols-outlined text-lg group-hover:scale-105 transition-transform">
+    person
+  </span>
+  <span class="text-[9px] font-medium leading-none">Profile</span>
+</a>
+</body></html>

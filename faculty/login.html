@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Faculty Login</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics if needed */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-[#111418] shadow-sm">
+<!-- Header Image Area -->
+<div class="relative w-full h-[240px] overflow-hidden rounded-b-[2rem]">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Modern university campus building with glass facade and blue sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3ssdgu-6uZYIUC-BZBxqx0O48dnnILHbmkOR23L_4kOUIqatACLceZxs6N48FYkhWUMFaDiimr9NGehPRq4uomVj_r0ikgeqNO9aa0X_wX8dszY_wgjxUI4Mn6aIAwwYy8uBY463m-ZkeCilHfLqwrWcCyPUiZ9zlZMGSF0BORScVoThA-u_a801Co149kq4fCTkMYYafj6gKfOiJ3wzYeai1_-g_o0q9R_OoSx0UJhgP8s6_MDLU0w6ZBGGB8qwhfA2TOCvopA");'>
+</div>
+<!-- Gradient Overlay for better text contrast if we put text here, or just style -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<!-- Logo/Title Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-6 text-white">
+<div class="flex items-center gap-3 mb-2">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">school</span>
+</div>
+<span class="text-sm font-medium tracking-wide uppercase opacity-90">State University</span>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col px-6 pt-6 pb-4">
+<!-- Headlines -->
+<h1 class="text-[#111418] dark:text-white text-[32px] font-bold leading-tight tracking-tight mb-2">Welcome, Faculty</h1>
+<p class="text-[#637588] dark:text-[#9BA1A6] text-base font-normal leading-normal mb-8">Please sign in to access your portal.</p>
+<!-- Login Form -->
+<div class="flex flex-col gap-5">
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="text-[#111418] dark:text-white text-base font-medium">Email or Faculty ID</label>
+<div class="flex w-full items-center rounded-lg border border-[#dbe0e6] dark:border-[#3E4D5D] bg-white dark:bg-[#1A2633] h-14 px-3 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-[#637588] dark:text-[#9BA1A6]" style="font-size: 24px;">badge</span>
+<input class="flex-1 bg-transparent border-none text-[#111418] dark:text-white placeholder:text-[#9BA1A6] focus:ring-0 text-base h-full ml-2" placeholder="dr.smith@college.edu" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<label class="text-[#111418] dark:text-white text-base font-medium">Password</label>
+<div class="flex w-full items-center rounded-lg border border-[#dbe0e6] dark:border-[#3E4D5D] bg-white dark:bg-[#1A2633] h-14 px-3 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-[#637588] dark:text-[#9BA1A6]" style="font-size: 24px;">lock</span>
+<input class="flex-1 bg-transparent border-none text-[#111418] dark:text-white placeholder:text-[#9BA1A6] focus:ring-0 text-base h-full ml-2" placeholder="Enter your password" type="password"/>
+<button class="flex items-center justify-center p-1 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-[#637588] dark:text-[#9BA1A6]">
+<span class="material-symbols-outlined" style="font-size: 24px;">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Forgot Password Link -->
+<div class="flex justify-end mt-1">
+<a class="text-primary text-sm font-medium hover:underline" href="#">Forgot Password?</a>
+</div>
+<!-- Sign In Button -->
+<button class="w-full h-12 bg-primary hover:bg-blue-600 active:bg-blue-700 text-white font-bold rounded-lg flex items-center justify-center gap-2 mt-4 transition-colors">
+<a href="./dasboard.html"><span>Sign In</span></a>
+<span class="material-symbols-outlined" style="font-size: 20px;">login</span>
+</button>
+<!-- Biometric Option -->
+<div class="flex flex-col items-center gap-4 mt-4">
+<div class="flex items-center gap-3 w-full">
+<div class="h-px bg-[#dbe0e6] dark:bg-[#3E4D5D] flex-1"></div>
+<span class="text-xs text-[#637588] dark:text-[#9BA1A6] font-medium uppercase tracking-wider">Or sign in with</span>
+<div class="h-px bg-[#dbe0e6] dark:bg-[#3E4D5D] flex-1"></div>
+</div>
+<button class="flex items-center justify-center w-12 h-12 rounded-full border border-[#dbe0e6] dark:border-[#3E4D5D] bg-white dark:bg-[#1A2633] text-primary hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 28px;">fingerprint</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="mt-auto py-6 flex justify-center">
+<a class="text-[#637588] dark:text-[#9BA1A6] text-sm font-medium flex items-center gap-1 hover:text-primary transition-colors" href="#">
+                Need Help? Contact Admin
+            </a>
+</div>
+</div>
+</body></html>

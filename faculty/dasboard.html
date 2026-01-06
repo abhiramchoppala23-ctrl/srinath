@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Faculty Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>.scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-20 max-w-md mx-auto bg-white dark:bg-[#101922] shadow-xl">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-[#101922]/90 backdrop-blur-sm border-b border-[#e5e7eb] dark:border-gray-800">
+<div class="flex items-center justify-between p-4 pt-8"> 
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Profile picture of a professor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA13pz33gskX3cDtVgSOngAaW5L8dZsTFAbK5OI7vBW-BqNA2TowIAcL-WF4hzO4oKZ1HcnWijnYWgcIn4_xeqSThBgjLFlXFJ1zaWfFHbictRfsYNzGfmA0zdCqBgJzy9CxCarBtVdSQVE2UGdL5kJTHtEbabJhdifLgHkccoo7I1V19I_5-6hT16mg8_LYxgCj4-lkErwvTCT6rNFNrNDWIq7ffowH3yD2fzJ2kGqnsAcshiITtE43gz2R4JReCVBSeWnWuu3UA");'>
+</div>
+<div class="flex flex-col">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Hello, Dr. Smith</h2>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Computer Science Dept.</span>
+</div>
+</div>
+<a href="./notification.html"
+   class="relative flex items-center justify-center size-10 rounded-full 
+          hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+
+  <span class="material-symbols-outlined text-gray-700 dark:text-gray-200">
+    notifications
+  </span>
+
+  <span
+    class="absolute top-2 right-2 size-2.5 rounded-full bg-red-500 
+           border-2 border-white dark:border-[#101922]">
+  </span>
+</a>
+
+</div>
+</header>
+<section class="p-4">
+<div class="flex gap-3 overflow-x-auto scrollbar-hide pb-2">
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-primary/10 dark:bg-primary/20 border border-primary/20">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xl">school</span>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">Classes</p>
+</div>
+<p class="text-2xl font-bold text-primary">4</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Today</p>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-orange-50 dark:bg-orange-900/20 border border-orange-100 dark:border-orange-800/30">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400 text-xl">pending_actions</span>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">Pending</p>
+</div>
+<p class="text-2xl font-bold text-orange-600 dark:text-orange-400">12</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Tasks</p>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800/30">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-xl">check_circle</span>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-300">Attendance</p>
+</div>
+<p class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">95%</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">This Week</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-4">
+<h3 class="text-lg font-bold leading-tight">My Classes</h3>
+<button class="text-primary text-sm font-medium hover:underline">See All</button>
+</div>
+<div class="flex overflow-x-auto gap-4 px-4 pb-4 scrollbar-hide snap-x snap-mandatory">
+<div class="min-w-[85%] snap-center flex flex-col rounded-xl bg-white dark:bg-[#1a2632] shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="h-32 w-full bg-cover bg-center relative" data-alt="Abstract code pattern background for computer science class" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGeicuVa3HfkiYvwh7XXYauom8E4cRPovpVc7NFQYSsyMxNzkDoq5sTmp6rofV_fpEWBF0-C7gI6DZGMwmWKfw6ZeXdHwXleLkJ_zGjoUGD5Rg9ebrKm6Zk_QyW381DI8DgWA5fODMs665uG6vrHMJCzRYzB_ZF9rlmOXB_JdUtgIi-zPYd8iB5YC1JPQejSXHSdVUFVQ5T-4hbOMs6Yij86PMlVFINn5J4M9yIbQe67lmz-WYsHi34YyVzv38itOKzf4CsXt4VA");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded-md">CS101</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div>
+<h4 class="text-base font-bold leading-tight">Intro to Algorithms</h4>
+<div class="flex items-center gap-2 mt-1 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>10:00 AM - 11:30 AM</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Room 304</span>
+</div>
+</div>
+<button class="flex w-full items-center justify-center rounded-lg h-9 bg-primary/10 hover:bg-primary/20 text-primary gap-2 text-sm font-semibold transition-colors">
+<span class="material-symbols-outlined text-lg">settings</span>
+                        Manage Class
+                    </button>
+</div>
+</div>
+
+<div class="min-w-[85%] snap-center flex flex-col rounded-xl bg-white dark:bg-[#1a2632] shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="h-32 w-full bg-cover bg-center relative" data-alt="Abstract network structure background for data structures class" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgvqT2z7_Qpp55j0zQT-qC1rQIzlsrrhheXr4S-H58qLRc7poQP7q0cDqpWuaMRgOrWfHXJ_8cqZvCum_Xl2UDSeJ7FhCm5mIRuk4LE1lQ6axBJ-ctISsH6S0zDcPDQkGwmCOofWtqQMOkvD1_CO5_JL63gWqgayDiCavNSHP5bm032Zs9PNNpj6DVFxWPPpYQfb5raDEfe6GgjZnzFir_D5tsBHir1YIPrFG0FUW_PGkoYfHucgXH61EMuAdbmj6jySpEtKFj1Q");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-md">CS202</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div>
+<h4 class="text-base font-bold leading-tight">Data Structures</h4>
+<div class="flex items-center gap-2 mt-1 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>02:00 PM - 04:00 PM</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Lab 2</span>
+</div>
+</div>
+<button class="flex w-full items-center justify-center rounded-lg h-9 bg-primary/10 hover:bg-primary/20 text-primary gap-2 text-sm font-semibold transition-colors">
+<span class="material-symbols-outlined text-lg">settings</span>
+                        Manage Class
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-3 px-4 mt-2">
+<h3 class="text-lg font-bold leading-tight">Recent Announcements</h3>
+<div class="flex flex-col gap-2 p-4 rounded-xl bg-white dark:bg-[#1a2632] shadow-sm border-l-4 border-l-primary border-y border-r border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm">Midterm Exam Schedule Released</h4>
+<span class="text-xs text-gray-400 whitespace-nowrap">2h ago</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">The final exam schedule for Fall 2023 has been uploaded. Please review the dates and inform your students...</p>
+<div class="flex items-center gap-2 mt-1">
+<div class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Academic</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 rounded-xl bg-white dark:bg-[#1a2632] shadow-sm border-l-4 border-l-orange-500 border-y border-r border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm">Department Meeting</h4>
+<span class="text-xs text-gray-400 whitespace-nowrap">Yesterday</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">Mandatory department meeting this Friday at 3 PM in the Conference Hall regarding new curriculum changes.</p>
+<div class="flex items-center gap-2 mt-1">
+<div class="bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Important</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 rounded-xl bg-white dark:bg-[#1a2632] shadow-sm border-l-4 border-l-gray-400 border-y border-r border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm">System Maintenance</h4>
+<span class="text-xs text-gray-400 whitespace-nowrap">Oct 24</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">The LMS will be down for scheduled maintenance on Sunday from 2 AM to 6 AM.</p>
+<div class="flex items-center gap-2 mt-1">
+<div class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">IT Dept</div>
+</div>
+</div>
+<div class="h-8"></div> 
+</section>
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#101922] border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 max-w-md mx-auto">
+<div class="flex justify-around items-end h-16 pb-2">
+<!-- Dashboard -->
+<a href="./dasboard.html"
+   class="flex flex-col items-center gap-0.5 w-12 text-primary group">
+  <span class="material-symbols-outlined text-lg group-hover:scale-105 transition-transform">
+    dashboard
+  </span>
+  <span class="text-[9px] font-medium leading-none">Dashboard</span>
+</a>
+
+<!-- Schedule -->
+<a href="./schedule.html"
+   class="flex flex-col items-center gap-0.5 w-12 text-gray-400 
+          hover:text-gray-600 dark:hover:text-gray-200 transition-colors group">
+  <span class="material-symbols-outlined text-lg group-hover:scale-105 transition-transform">
+    calendar_month
+  </span>
+  <span class="text-[9px] font-medium leading-none">Schedule</span>
+</a>
+
+<!-- Library -->
+<a href="./library.html"
+   class="flex flex-col items-center gap-0.5 w-12 text-gray-400 
+          hover:text-gray-600 dark:hover:text-gray-200 transition-colors group">
+  <span class="material-symbols-outlined text-lg group-hover:scale-105 transition-transform">
+    local_library
+  </span>
+  <span class="text-[9px] font-medium leading-none">Library</span>
+</a>
+
+<!-- Profile -->
+<a href="./profile.html"
+   class="flex flex-col items-center gap-0.5 w-12 text-gray-400 
+          hover:text-gray-600 dark:hover:text-gray-200 transition-colors group">
+  <span class="material-symbols-outlined text-lg group-hover:scale-105 transition-transform">
+    person
+  </span>
+  <span class="text-[9px] font-medium leading-none">Profile</span>
+</a>
+
+</body></html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>View/Edit Attendance</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>.scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-20 max-w-md mx-auto bg-white dark:bg-[#101922] shadow-xl">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-[#101922]/90 backdrop-blur-sm border-b border-[#e5e7eb] dark:border-gray-800">
+<div class="flex items-center justify-between p-4 pt-8">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Profile picture of a professor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA13pz33gskX3cDtVgSOngAaW5L8dZsTFAbK5OI7vBW-BqNA2TowIAcL-WF4hzO4oKZ1HcnWijnYWgcIn4_xeqSThBgjLFlXFJ1zaWfFHbictRfsYNzGfmA0zdCqBgJzy9CxCarBtVdSQVE2UGdL5kJTHtEbabJhdifLgHkccoo7I1V19I_5-6hT16mg8_LYxgCj4-lkErwvTCT6rNFNrNDWIq7ffowH3yD2fzJ2kGqnsAcshiITtE43gz2R4JReCVBSeWnWuu3UA");'>
+</div>
+<div class="flex flex-col">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Dr. Smith</h2>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Faculty Admin</span>
+</div>
+</div>
+<button class="relative flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-200">notifications</span>
+<span class="absolute top-2 right-2 size-2.5 rounded-full bg-red-500 border-2 border-white dark:border-[#101922]"></span>
+</button>
+</div>
+</header>
+<section class="flex flex-col gap-4 p-4 pb-2">
+<div class="flex justify-between items-center">
+<div>
+<h1 class="text-xl font-bold text-[#111418] dark:text-white">Attendance Records</h1>
+<p class="text-xs text-gray-500 dark:text-gray-400">View and edit daily records</p>
+</div>
+<button class="p-2 text-primary bg-primary/10 hover:bg-primary/20 transition-colors rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">filter_alt</span>
+<span class="text-xs font-bold">Filter</span>
+</button>
+</div>
+<div class="flex gap-3">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 text-lg">school</span>
+</div>
+<select class="w-full pl-10 pr-8 py-2.5 bg-white dark:bg-[#1a2632] border border-gray-200 dark:border-gray-700 rounded-xl text-sm font-medium appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-gray-700 dark:text-gray-200 transition-shadow">
+<option>CS101 - Algorithms</option>
+<option>CS202 - Data Structures</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+</div>
+<div class="relative w-36">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 text-lg">event</span>
+</div>
+<select class="w-full pl-10 pr-8 py-2.5 bg-white dark:bg-[#1a2632] border border-gray-200 dark:border-gray-700 rounded-xl text-sm font-medium appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-gray-700 dark:text-gray-200 transition-shadow">
+<option>Today</option>
+<option>Yesterday</option>
+<option>Select Date</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between bg-white dark:bg-[#1a2632] p-3 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm mt-1">
+<div class="flex flex-col items-center flex-1 border-r border-gray-100 dark:border-gray-700">
+<span class="text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400">Total</span>
+<span class="text-lg font-bold">48</span>
+</div>
+<div class="flex flex-col items-center flex-1 border-r border-gray-100 dark:border-gray-700">
+<span class="text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400">Present</span>
+<span class="text-lg font-bold text-emerald-600 dark:text-emerald-400">42</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<span class="text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400">Absent</span>
+<span class="text-lg font-bold text-red-600 dark:text-red-400">6</span>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-3 px-4 pb-6 mt-2">
+<div class="relative mb-2">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-gray-50 dark:bg-gray-800/50 border-transparent focus:border-primary/50 focus:bg-white dark:focus:bg-[#1a2632] rounded-xl text-sm focus:ring-2 focus:ring-primary/20 placeholder-gray-400 transition-all" placeholder="Search student name or ID..." type="text"/>
+</div>
+<div class="flex justify-between px-2 text-xs font-medium text-gray-400 uppercase tracking-wider">
+<span>Student Details</span>
+<span>Status</span>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-between group active:scale-[0.99] transition-transform">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 flex items-center justify-center font-bold border border-indigo-100 dark:border-indigo-800">
+                    AJ
+                </div>
+<div>
+<h4 class="font-bold text-sm leading-tight text-gray-900 dark:text-gray-100">Alice Johnson</h4>
+<p class="text-xs text-gray-500 mt-0.5">ID: 2023001</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                    Present
+                </span>
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-400 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-4 rounded-xl shadow-lg ring-1 ring-primary/30 border-l-4 border-l-primary flex flex-col gap-4 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 flex items-center justify-center font-bold border border-purple-100 dark:border-purple-800">
+                        MJ
+                    </div>
+<div>
+<h4 class="font-bold text-sm leading-tight text-gray-900 dark:text-gray-100">Michael Jordan</h4>
+<p class="text-xs text-gray-500 mt-0.5">ID: 2023023</p>
+</div>
+</div>
+<div class="px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-red-500"></span>
+                    Absent
+                </div>
+</div>
+<div class="flex flex-col gap-3 pt-3 border-t border-gray-100 dark:border-gray-700 animate-in fade-in slide-in-from-top-2 duration-300">
+<div>
+<label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2 block">Change Status To</label>
+<div class="grid grid-cols-4 gap-2">
+<button class="flex flex-col items-center justify-center py-2 px-1 rounded-lg border border-gray-100 dark:border-gray-700 hover:bg-emerald-50 hover:border-emerald-200 dark:hover:bg-emerald-900/20 group transition-all">
+<span class="material-symbols-outlined text-lg text-gray-400 group-hover:text-emerald-500 mb-1">check_circle</span>
+<span class="text-[10px] font-medium text-gray-500 group-hover:text-emerald-600">Present</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2 px-1 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 shadow-sm transition-all relative">
+<div class="absolute -top-1 -right-1 size-3 bg-primary rounded-full border-2 border-white dark:border-[#1a2632]"></div>
+<span class="material-symbols-outlined text-lg text-red-600 dark:text-red-400 mb-1">cancel</span>
+<span class="text-[10px] font-bold text-red-700 dark:text-red-300">Absent</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2 px-1 rounded-lg border border-gray-100 dark:border-gray-700 hover:bg-orange-50 hover:border-orange-200 dark:hover:bg-orange-900/20 group transition-all">
+<span class="material-symbols-outlined text-lg text-gray-400 group-hover:text-orange-500 mb-1">schedule</span>
+<span class="text-[10px] font-medium text-gray-500 group-hover:text-orange-600">Late</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2 px-1 rounded-lg border border-gray-100 dark:border-gray-700 hover:bg-blue-50 hover:border-blue-200 dark:hover:bg-blue-900/20 group transition-all">
+<span class="material-symbols-outlined text-lg text-gray-400 group-hover:text-blue-500 mb-1">info</span>
+<span class="text-[10px] font-medium text-gray-500 group-hover:text-blue-600">Excused</span>
+</button>
+</div>
+</div>
+<div>
+<label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1 block">Reason for change <span class="text-red-500">*</span></label>
+<textarea class="w-full text-sm p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-1 focus:ring-primary focus:border-primary outline-none resize-none placeholder-gray-400 text-gray-700 dark:text-gray-200" rows="2">Student reported illness via email.</textarea>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 py-2.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">Cancel</button>
+<button class="flex-1 py-2.5 rounded-lg bg-primary text-white text-sm font-bold shadow-md shadow-primary/30 hover:bg-blue-600 transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-lg">save</span>
+                        Update Record
+                    </button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-between group active:scale-[0.99] transition-transform">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 flex items-center justify-center font-bold border border-blue-100 dark:border-blue-800">
+                    EK
+                </div>
+<div>
+<h4 class="font-bold text-sm leading-tight text-gray-900 dark:text-gray-100">Emily Kline</h4>
+<p class="text-xs text-gray-500 mt-0.5">ID: 2023045</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                    Late
+                </span>
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-400 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-between opacity-80 group active:scale-[0.99] transition-transform">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 flex items-center justify-center font-bold border border-gray-200 dark:border-gray-600">
+                    DT
+                </div>
+<div>
+<h4 class="font-bold text-sm leading-tight text-gray-900 dark:text-gray-100">David Thompson</h4>
+<p class="text-xs text-gray-500 mt-0.5">ID: 2023012</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                    Excused
+                </span>
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-400 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center justify-between group active:scale-[0.99] transition-transform">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-300 flex items-center justify-center font-bold border border-teal-100 dark:border-teal-800">
+                    SL
+                </div>
+<div>
+<h4 class="font-bold text-sm leading-tight text-gray-900 dark:text-gray-100">Sarah Lee</h4>
+<p class="text-xs text-gray-500 mt-0.5">ID: 2023088</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                    Present
+                </span>
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-400 transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+</div>
+</section></section>
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#101922] border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 max-w-md mx-auto">
+<div class="flex justify-around items-end h-16 pb-2">
+<button class="flex flex-col items-center gap-1 w-16 text-primary group">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">dashboard</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors group">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">calendar_month</span>
+<a href="./schelde.html"><span class="text-[10px] font-medium">Schedule</span></a>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors group">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">local_library</span>
+<span class="text-[10px] font-medium">Library</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors group">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</nav>
+</div>
+
+</body></html>
